@@ -1,34 +1,32 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-none sticky top-0 z-10 bg-[#111827]">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="w-full px-4 py-3 sm:px-6 lg:px-8 ">
         <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                    </a>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+            <!-- Logo -->
+            <div class="shrink-0 flex items-center">
+                <a href="{{ route('dashboard') }}">
+                    <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                </a>
+            </div>
+            <!-- Nav -->
+            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
+                    <a href="#blog" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Blog</a>
+                    <a href="#bookmark"
+                        class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Bookmark</a>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown align="right">
                     <x-slot name="trigger">
-                        <button
-                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full">
                             @auth
                                 <div>{{ Auth::user()->name }}</div>
                             @endauth
-
-                            <div class="ms-1">
+                            <div class="ps-2">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
@@ -36,6 +34,9 @@
                                         clip-rule="evenodd" />
                                 </svg>
                             </div>
+                            Username
+                            <img src="#" alt="Profile Picture"
+                                class="w-10 h-10 rounded-full fill-black bg-black">
                         </button>
                     </x-slot>
 
