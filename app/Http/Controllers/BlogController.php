@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index()
+    public function dashboard()
     {
         $blogs = Blog::get();
         $categories = Category::all();
@@ -16,5 +16,9 @@ class BlogController extends Controller
         return view('dashboard', compact('blogs','categories'));
     }
 
+
+    public function store(){
+
+    }
     
 }

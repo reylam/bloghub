@@ -116,8 +116,8 @@
         @guest
         <div class="flex gap-7 items-center">
 
-            <a href="/login" class="px-5 py-2 rounded-3xl bg-slate-500 transition-all ease-linear duration-200 hover:bg-slate-600 hover:font-semibold">Login</a>
-            <a href="/register" class="">Register</a>
+            <a href="{{ route('login') }}" class="px-5 py-2 rounded-3xl bg-slate-500 transition-all ease-linear duration-200 hover:bg-slate-600 hover:font-semibold">Login</a>
+            <a href="{{ route('register') }}" class="">Register</a>
         </div>
         @endguest
     </div>
