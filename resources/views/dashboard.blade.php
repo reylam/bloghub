@@ -260,33 +260,40 @@
         </div>
     </main>
 
-    <div class="flex justify-center mt-10 space-x-2 items-center gap-3">
+    <div class="flex justify-center py-10 space-x-2 items-center gap-3">
         <!-- Arrow Left -->
         <button
             class="pagination-arrow w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-gray-500 transition duration-200">
-            <
-        </button>
+            < </button>
 
-        <!-- Page Numbers -->
-        <div class="flex space-x-3">
-            <button
-                class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">1</button>
-            <button
-                class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">2</button>
-            <button
-                class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">3</button>
-            <button
-                class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">4</button>
-            <button
-                class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">5</button>
-        </div>
+                <!-- Page Numbers -->
+                <div class="flex space-x-3">
+                    <button
+                        class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">1</button>
+                    <button
+                        class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">2</button>
+                    <button
+                        class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">3</button>
+                    <button
+                        class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">4</button>
+                    <button
+                        class="pagination-number w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-yellow-500 hover:text-black transition duration-200">5</button>
+                </div>
 
-        <!-- Arrow Right -->
-        <button
-            class="pagination-arrow w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-gray-500 transition duration-200">
-            >
-        </button>
+                <!-- Arrow Right -->
+                <button
+                    class="pagination-arrow w-10 h-10 flex items-center justify-center rounded-lg border border-gray-500 hover:bg-gray-500 transition duration-200">
+                    >
+                </button>
     </div>
+
+    <footer class="w-full flex justify-center p-10 bg-slate-800">
+        <div class="shrink-0 flex items-center transition-all ease-in-out duration-300 hover:scale-105">
+            <a href="{{ route('dashboard') }}">
+                <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+            </a>
+        </div>
+    </footer>
 
 
 </x-app-layout>

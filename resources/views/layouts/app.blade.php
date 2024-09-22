@@ -31,7 +31,7 @@
         @endisset
 
         <!-- Page Content -->
-        <main>
+        <main class="flex flex-col gap-4">
             {{ $slot }}
         </main>
     </div>
