@@ -2,14 +2,14 @@
     <!-- Hero Apa Gitu Lupa -->
     <header class="container w-[1380px] h-[320px] bg-[#282828] mx-auto my-[30px] rounded-xl flex gap-8 d flex-col">
         <div class="">
-            <h1 class="text-[48px] font-['Poppins'] font-bold text-white ps-[48px] pt-[50px]">
+            <h1 class="text-[48px] font-bold text-white ps-[48px] pt-[50px]">
                 Welcome to Blog<span class="text-[#FFD600]">.Hub</span>
             </h1>
-            <p class="text-[16px] font-['Poppins'] text-white ps-[48px]">
+            <p class="text-[16px] text-white ps-[48px]">
                 Your go-to platform for discovering insightful <span class="font-extrabold">articles, trends, and
                     stories</span>
             </p>
-            <p class="text-[16px] font-['Poppins'] text-white ps-[48px] mt-[10px]">
+            <p class="text-[16px] text-white ps-[48px] mt-[10px]">
                 across various fields including technology, lifestyle, travel, productivity, and much more
             </p>
         </div>
@@ -23,7 +23,7 @@
                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                 </svg>
                 <input
-                    class="w-full h-full ps-4 text-[16px] font-['Poppins'] text-white border-none focus:outline-none focus:ring-0 rounded-[26px] bg-[#555555]"
+                    class="w-full h-full ps-4 text-[16px] text-white border-none focus:outline-none focus:ring-0 rounded-[26px] bg-[#555555]"
                     type="text" placeholder="Search Here" aria-label="Search">
             </div>
 
@@ -32,18 +32,20 @@
                 class="flex space-x-4 ms-[15px] overflow-hidden max-w-[810px] transition-all duration-300">
                 <div class="flex space-x-4 w-max">
                     <button
-                        class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">All</button>
+                        class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] transition-all">All</button>
                     @foreach ($categories as $category)
                         <button
-                            class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">{{ $category->name }}</button>
+                            class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] transition-all">{{ $category->name }}</button>
                     @endforeach
                 </div>
             </div>
 
             <!-- Tombol Kanan untuk Navigasi -->
             <button id="next-btn"
-                class="ms-[15px] text-white bg-gray-400 hover:bg-gray-600 rounded-full px-3 py-2 transition-all">
-                →
+                class="ms-[10px] fill-white bg-none hover:bg-[#FFD600] hover:fill-black rounded-full px-3 py-3 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                  </svg>
             </button>
         </div>
     </header>
@@ -89,7 +91,7 @@
         <div class="flex w-[1380px] flex-wrap gap-9">
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
-                    class="w-full h-[500px] rounded-2xl">
+                    class="w-full h-[530px] rounded-2xl">
                 <div class="flex flex-col gap-4 px-4 ">
                     <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
                     <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
@@ -103,7 +105,7 @@
                                     d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
                             </svg>
                         </button>
-                        <div class="flex gap-3">
+                        <div class="flex gap-3 ml-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-calendar-event" viewBox="0 0 16 16">
                                 <path
@@ -132,7 +134,7 @@
 
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
-                    class="w-full h-[500px] rounded-2xl">
+                    class="w-full h-[530px] rounded-2xl">
                 <div class="flex flex-col gap-4 px-4 ">
                     <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
                     <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
@@ -146,7 +148,7 @@
                                     d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
                             </svg>
                         </button>
-                        <div class="flex gap-3">
+                        <div class="flex gap-3 ml-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
                                 <path
@@ -175,7 +177,7 @@
 
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
-                    class="w-full h-[500px] rounded-2xl">
+                    class="w-full h-[530px] rounded-2xl">
                 <div class="flex flex-col gap-4 px-4 ">
                     <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
                     <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
@@ -189,7 +191,7 @@
                                     d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
                             </svg>
                         </button>
-                        <div class="flex gap-3">
+                        <div class="flex gap-3 ml-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
                                 <path
@@ -217,7 +219,7 @@
             </div>
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
-                    class="w-full h-[500px] rounded-2xl">
+                    class="w-full h-[530px] rounded-2xl">
                 <div class="flex flex-col gap-4 px-4 ">
                     <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
                     <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
@@ -231,7 +233,7 @@
                                     d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
                             </svg>
                         </button>
-                        <div class="flex gap-3">
+                        <div class="flex gap-3 ml-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
                                 <path
