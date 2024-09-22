@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class BookmarkController extends Controller
 {
+<<<<<<< HEAD
     public function index()
     {
         $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
@@ -20,5 +21,15 @@ class BookmarkController extends Controller
         Bookmark::create($request->all());
 
         return redirect()->back()->with('success', 'Berhasil menambahkan Blog Ke bookmark');
+=======
+    public function store(Request $request)
+    {
+        Bookmark::create([
+            'user_id' => $request->user_id,
+            'blog_id' => $request->blog_id
+        ]);
+
+        return redirect()->back()->with('status', 'Successfully add to bookmarks');
+>>>>>>> origin/main
     }
 }

@@ -124,6 +124,9 @@ class DatabaseSeeder extends Seeder
         $tag_politics = Tag::create([
             'name' => 'RUUPerampasanAset'
         ]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     }
 }

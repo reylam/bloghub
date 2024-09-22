@@ -11,9 +11,16 @@ class Blog extends Model
 
     protected $guarded = [];
 
+<<<<<<< HEAD
     public function bookmarks()
     {
         return $this->hasMany(Bookmark::class);
+=======
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+>>>>>>> origin/main
     }
 
     public function user()
@@ -21,6 +28,7 @@ class Blog extends Model
         return $this->belongsTo(User::class);
     }
 
+<<<<<<< HEAD
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -30,5 +38,10 @@ class Blog extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+=======
+    public function bookmarks()
+    {
+        return $this->hasMany(Bookmark::class);
+>>>>>>> origin/main
     }
 }

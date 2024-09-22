@@ -8,7 +8,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <a href="{{ route('blog.create') }}"
-                class="py-2 px-5 rounded-lg border-2 border-solid border-[#FFD600] transition-all duration-200 ease-in-out hover:bg-[#FFD600] hover:font-black hover:text-black ">+ Add Blog</a>
+                class="py-2 px-5 rounded-lg bg-[#FFD600] transition-all duration-200 ease-in-out font-bold text-black hover:bg-[#FFA500] ">+
+                Add Blog</a>
+            <a href="{{ route('profile.blog') }}"
+                class="py-2 px-5 rounded-lg border-2 border-[#FFD600] hover:bg-[#FFD600] transition-all duration-200 ease-in-out font-bold text-white hover:text-black ">
+                My Blog</a>
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.update-profile-information-form')

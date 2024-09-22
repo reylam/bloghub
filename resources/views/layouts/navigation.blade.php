@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-none sticky top-0 z-10 bg-[#111827] opacity-80">
+<nav x-data="{ open: false }" class="bg-none sticky top-0 z-10 bg-[#111827] opacity-90">
     <!-- Primary Navigation Menu -->
     <div class="w-full px-4 py-3 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
@@ -11,9 +11,14 @@
             <!-- Nav -->
             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
                 <div class="hidden md:flex space-x-6">
+<<<<<<< HEAD
                     <a href="{{ route('dashboard') }}"
                         class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
                     <a href="#blog" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Blog</a>
+=======
+                    <a href="{{route('dashboard')}}" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
+                    <a href="{{route('profile.blog')}}" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Blog</a>
+>>>>>>> origin/main
                     @auth
                         <a href="{{ route('profile.bookmark') }}"
                             class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Bookmark</a>
@@ -25,7 +30,11 @@
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right">
                         <x-slot name="trigger">
+<<<<<<< HEAD
                             <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full font-semibold text-black">
+=======
+                            <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full text-black">
+>>>>>>> origin/main
                                 @auth
                                     <div>{{ Auth::user()->name }}</div>
                                 @endauth
@@ -37,7 +46,11 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </div>
+<<<<<<< HEAD
                                 {{Auth::user()->username}}
+=======
+                                {{ Auth::user()->username }}
+>>>>>>> origin/main
                                 <img src="#" alt="Profile Picture"
                                     class="w-10 h-10 rounded-full fill-black bg-black">
                             </button>

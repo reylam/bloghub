@@ -1,6 +1,15 @@
 <x-app-layout>
     <div class="min-w-full flex justify-center bg-[#111827] text-white py-10">
         <div class="flex w-[1380px] py-6 flex-col gap-8 bg-[#1f2937] rounded-lg p-8 shadow-lg">
+            @if ($errors->any())
+                <div class="bg-red-500 text-white p-4 rounded-md">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <p class="font-bold text-3xl text-center text-[#FFD600]">
                 Add a New Blog
             </p>
@@ -30,7 +39,11 @@
                             placeholder="Write your blog content here..." required></textarea>
                     </div>
                     <div>
+<<<<<<< HEAD
                         <label for="category" class="font-semibold text-lg">Category:</label>
+=======
+                        <label for="category">Category:</label>
+>>>>>>> origin/main
                         <select name="category_id" id="category"
                             class="border-2 border-[#ffd50070] rounded-md w-full py-2 px-3 bg-[#2d3748] text-white placeholder-gray-400 focus:ring-[#FFD600] focus:border-[#FFD600]">
                             <option value="" disabled selected class="bg-gray-700 text-gray-400">Select a category
@@ -44,7 +57,11 @@
                     <div>
                         <label for="dropzone-file"
                             class="flex flex-col items-center justify-center w-full h-64 border-2 border-[#ffd50070] border-dashed rounded-lg cursor-pointer bg-[#2d3748] hover:bg-[#3a434c]">
+<<<<<<< HEAD
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
+=======
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6" id="upload-image">
+>>>>>>> origin/main
                                 <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -58,12 +75,19 @@
                             <input id="dropzone-file" type="file" name="thumbnail" class="hidden"
                                 onchange="displayFile(this)" />
                             <img id="image-preview"
+<<<<<<< HEAD
                                 class="mt-2 hidden w-24 h-24 object-cover border-2 border-[#ffd50070] rounded-md" />
                         </label>
                         <p id="file-name" class="mt-2 text-sm text-gray-400">No file chosen</p>
                     </div>
                     <div class="">
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+=======
+                                class="mt-2 hidden w-full h-full object-cover border-2 border-[#ffd50070] rounded-md" />
+                        </label>
+                        <p id="file-name" class="mt-2 text-sm text-gray-400">No file chosen</p>
+                        <input type="text" value="{{ Auth::user()->id }}" name="user_id" class="hidden">
+>>>>>>> origin/main
                     </div>
                     <div>
                         <button type="submit"
@@ -75,6 +99,7 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
     <script>
         function displayFile(input) {
             const fileName = input.files[0] ? input.files[0].name : 'No file chosen';
@@ -82,11 +107,25 @@
 
             const file = input.files[0];
             const preview = document.getElementById('image-preview');
+=======
+
+    <script>
+        function displayFile(input) {
+            const fileName = input.files[0] ?
+                input.files[0].name :
+                "No file chosen";
+            document.getElementById("file-name").textContent = fileName;
+
+            const file = input.files[0];
+            const preview = document.getElementById("image-preview");
+            const uploadImage = document.getElementById('upload-image')
+>>>>>>> origin/main
 
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     preview.src = e.target.result;
+<<<<<<< HEAD
                     preview.classList.remove('hidden'); // Show the image preview
                 };
                 reader.readAsDataURL(file);
@@ -94,5 +133,17 @@
                 preview.classList.add('hidden'); // Hide the image preview if no file
             }
         }
+=======
+                    uploadImage.classList.add("hidden")
+                    preview.classList.remove("hidden"); // Show the image preview
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.classList.add("hidden"); // Hide the image preview if no file
+            }
+        }
+
+        displayFile();
+>>>>>>> origin/main
     </script>
 </x-app-layout>
