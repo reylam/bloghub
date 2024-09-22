@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-none sticky top-0 z-10 bg-[#111827] opacity-80">
+<nav x-data="{ open: false }" class="bg-none sticky top-0 z-10 bg-[#111827] opacity-90">
     <!-- Primary Navigation Menu -->
     <div class="w-full px-4 py-3 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
@@ -24,7 +24,7 @@
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right">
                         <x-slot name="trigger">
-                            <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full">
+                            <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full text-black">
                                 @auth
                                     <div>{{ Auth::user()->name }}</div>
                                 @endauth
@@ -36,7 +36,7 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </div>
-                                Username
+                                {{ Auth::user()->username }}
                                 <img src="#" alt="Profile Picture"
                                     class="w-10 h-10 rounded-full fill-black bg-black">
                             </button>
@@ -114,11 +114,12 @@
             </div>
         @endauth
         @guest
-        <div class="flex gap-7 items-center">
+            <div class="flex gap-7 items-center">
 
-            <a href="{{ route('login') }}" class="px-5 py-2 rounded-3xl bg-slate-500 transition-all ease-linear duration-200 hover:bg-slate-600 hover:font-semibold">Login</a>
-            <a href="{{ route('register') }}" class="">Register</a>
-        </div>
+                <a href="{{ route('login') }}"
+                    class="px-5 py-2 rounded-3xl bg-slate-500 transition-all ease-linear duration-200 hover:bg-slate-600 hover:font-semibold">Login</a>
+                <a href="{{ route('register') }}" class="">Register</a>
+            </div>
         @endguest
     </div>
 </nav>

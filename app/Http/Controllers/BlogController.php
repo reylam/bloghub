@@ -46,4 +46,23 @@ class BlogController extends Controller
 
         return redirect()->route('profile.edit')->with('success', 'Blog post created successfully!');
     }
+
+    public function show($slug)
+    {
+        $blog = Blog::where('slug', $slug)->first();
+
+        $blog->update([
+            'views' => $blog->views + 1
+        ]);
+
+        if ($blog->views >= 1_000_000_000) {
+            return number_format($blog->views / 1_000_000_000, 1) . 'B';
+        } elseif ($blog->views >= 1_000_000) {
+            return number_format($blog->views / 1_000_000, 1) . 'M';
+        } elseif ($blog->views >= 1_000) {
+            return number_format($blog->views / 1_000, 1) . 'K';
+        }
+
+        return view('blog.showBlog', compact('blog'));
+    }
 }

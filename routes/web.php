@@ -19,5 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::get('profile/addBlog', [BlogController::class, 'create'])->name('blog.create');
     Route::post('profile/addBlog', [BlogController::class, 'store'])->name('blog.store');
 });
+Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 require __DIR__ . '/auth.php';
