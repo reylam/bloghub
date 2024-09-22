@@ -16,11 +16,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/profile/addBlog', function () {
-        return view('blog.addBlog');
-    })->name('blog.create');
-    Route::post('profile/addBlog', [ProfileController::class, 'store'])->name('blog.store');
-    
+    Route::get('profile/addBlog', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('profile/addBlog', [BlogController::class, 'store'])->name('blog.store');
 });
 
 require __DIR__ . '/auth.php';

@@ -21,6 +21,17 @@
                             placeholder="Write your blog content here..." required></textarea>
                     </div>
                     <div>
+                        <label for="category">Category:</label>
+                        <select name="category_id" id="category"
+                            class="border-2 border-[#ffd50070] rounded-md w-full py-2 px-3 bg-yellow-100 text-black"
+                            required>
+                            <option value="" disabled selected>Select a category</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
                         <label for="image">Upload Image:</label>
                         <input type="file" id="image" name="image" class="w-full">
                     </div>

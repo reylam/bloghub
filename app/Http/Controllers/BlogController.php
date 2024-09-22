@@ -14,12 +14,15 @@ class BlogController extends Controller
         $blogs = Blog::get();
         $categories = Category::all();
 
-        return view('dashboard', compact('blogs','categories'));
+        return view('dashboard', compact('blogs', 'categories'));
+    }
+
+    public function create()
+    {
+        $categories = Category::all();
+        return view('blog.addBlog', compact('categories'));
     }
 
 
-    public function store(Request $request){
-        
-    }
-    
+    public function store(Request $request) {}
 }
