@@ -11,10 +11,11 @@
             <!-- Nav -->
             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
                 <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
+                    <a href="{{ route('dashboard') }}"
+                        class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
                     <a href="#blog" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Blog</a>
                     @auth
-                        <a href="#bookmark"
+                        <a href="{{ route('profile.bookmark') }}"
                             class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Bookmark</a>
                     @endauth
                 </div>
@@ -24,7 +25,7 @@
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right">
                         <x-slot name="trigger">
-                            <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full">
+                            <button class="flex items-center space-x-2 h-[50px] w-[150px] bg-[#D9D9D9] rounded-full font-semibold text-black">
                                 @auth
                                     <div>{{ Auth::user()->name }}</div>
                                 @endauth
@@ -36,7 +37,7 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </div>
-                                Username
+                                {{Auth::user()->username}}
                                 <img src="#" alt="Profile Picture"
                                     class="w-10 h-10 rounded-full fill-black bg-black">
                             </button>
@@ -114,11 +115,12 @@
             </div>
         @endauth
         @guest
-        <div class="flex gap-7 items-center">
+            <div class="flex gap-7 items-center">
 
-            <a href="{{ route('login') }}" class="px-5 py-2 rounded-3xl bg-slate-500 transition-all ease-linear duration-200 hover:bg-slate-600 hover:font-semibold">Login</a>
-            <a href="{{ route('register') }}" class="">Register</a>
-        </div>
+                <a href="{{ route('login') }}"
+                    class="px-5 py-2 rounded-3xl bg-slate-500 transition-all ease-linear duration-200 hover:bg-slate-600 hover:font-semibold">Login</a>
+                <a href="{{ route('register') }}" class="">Register</a>
+            </div>
         @endguest
     </div>
 </nav>

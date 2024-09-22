@@ -125,20 +125,5 @@ class DatabaseSeeder extends Seeder
             'name' => 'RUUPerampasanAset'
         ]);
 
-        $blog_tech = Blog::create([
-            'title' => 'Apple Resmi Merilis iPhone 16 dengan Inovasi Terbaru',
-            'slug' => Str::uuid()->toString(),
-            'content' => 'Apple kembali membuat gebrakan dengan meluncurkan iPhone 16, penerus dari seri sebelumnya yang membawa berbagai pembaruan signifikan. iPhone 16 hadir dengan desain yang lebih ramping, performa yang lebih kuat, serta peningkatan di sektor kamera dan daya tahan baterai.
-
-Fitur Unggulan iPhone 16:
-
-1. Chip A18 Bionic – Dilengkapi dengan chip terbaru dari Apple, iPhone 16 menjanjikan performa lebih cepat dan efisiensi daya yang lebih baik.
-2. Layar ProMotion 120Hz – Visual semakin halus dengan refresh rate 120Hz yang memberikan pengalaman scrolling dan gaming lebih responsif.
-3. Kamera 48MP – Kamera utama iPhone 16 menghadirkan resolusi yang lebih tinggi dengan dukungan teknologi pencitraan yang ditingkatkan, memungkinkan hasil foto lebih tajam dan jernih.
-4. Peningkatan Daya Baterai – Dengan optimasi chip A18, iPhone 16 menawarkan daya tahan baterai yang lebih lama dibandingkan seri sebelumnya.
-5. Desain Sleek dan Kokoh – Mengusung desain kaca matte yang lebih ramping dan kuat, iPhone 16 tetap mempertahankan estetika premium.
-6. Dengan iPhone 16, Apple terus memperkuat posisinya sebagai pemimpin di pasar smartphone global, menawarkan inovasi yang selalu ditunggu-tunggu oleh penggemarnya di seluruh dunia.',
-            'category_id' => $tech->id,
-        ]);
     }
 }

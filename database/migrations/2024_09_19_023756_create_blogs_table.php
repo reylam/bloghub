@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('thumbnail')->nullable();
             $table->integer('views')->default(0);
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

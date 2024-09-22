@@ -1,111 +1,83 @@
 <x-app-layout>
-
-<!-- Single News Start-->
-<div class="single-news">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-wrap">
-            <div class="w-full lg:w-2/3">
-                <div class="bg-white p-4 shadow-md">
-                    <div class="sn-img">
-                        <img src="img/news-825x525.jpg" class="w-full rounded-md" />
-                    </div>
-                    <div class="sn-content mt-4">
-                        <h1 class="sn-title text-3xl font-bold mb-4">Lorem ipsum dolor sit amet</h1>
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, lorem eu eleifend bibendum, augue purus mollis sapien, non rhoncus eros leo in nunc. Donec a nulla vel turpis consectetur tempor ac vel justo. In hac habitasse platea dictumst. Cras nec sollicitudin eros. Nunc eu enim non turpis sagittis rhoncus consectetur id augue. Mauris dignissim neque felis. Phasellus mollis mi a pharetra cursus. Maecenas vulputate augue placerat lacus mattis, nec ornare risus sollicitudin.
-                        </p>
-                        <p class="mb-4">
-                            Mauris eu pulvinar tellus, eu luctus nisl. Pellentesque suscipit mi eu varius pulvinar. Aenean vulputate, massa eget elementum finibus, ipsum arcu commodo est, ut mattis eros orci ac risus. Suspendisse ornare, massa in feugiat facilisis, eros nisl auctor lacus, laoreet tempus elit dolor eu lorem. Nunc a arcu suscipit, suscipit quam quis, semper augue.
-                        </p>
-                        <p class="mb-4">
-                            Quisque arcu nulla, convallis nec orci vel, suscipit elementum odio. Curabitur volutpat velit non diam tincidunt sodales. Nullam sapien libero, bibendum nec viverra in, iaculis ut eros.
-                        </p>
-                        <h3 class="text-2xl font-semibold mt-4 mb-2">Lorem ipsum dolor sit amet</h3>
-                        <p class="mb-4">
-                            Vestibulum sit amet ullamcorper sem. Integer hendrerit elit eget purus sodales maximus. Quisque ac nulla arcu. Morbi venenatis arcu ac arcu cursus pharetra. Morbi sit amet viverra augue, ac ultricies libero. Praesent elementum lectus mi, eu elementum urna venenatis sed. Donec auctor purus ut mattis feugiat. Integer mi erat, consectetur sed tincidunt vitae, sagittis elementum libero. Vivamus a mauris consequat, hendrerit lectus in, fermentum libero. Integer mattis bibendum neque et porttitor.
-                        </p>
-                        <p class="mb-4">
-                            Mauris quis arcu finibus, posuere dolor eu, viverra felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                        </p>
-                        <h4 class="text-xl font-semibold mt-4 mb-2">Lorem ipsum dolor sit amet</h4>
-                        <p class="mb-4">
-                            Praesent ultricies, mauris eget vestibulum viverra, neque lorem malesuada mauris, eget rhoncus lectus enim a lorem. Vivamus at vehicula risus, eget facilisis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et posuere sapien. Fusce bibendum lorem sem, quis tincidunt felis mattis nec.
-                        </p>
-                    </div>
-                </div>
-                <div class="sn-related mt-8">
-                    <h2 class="text-2xl font-bold mb-4">Related News</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="sn-img">
-                            <img src="img/news-350x223-1.jpg" class="w-full rounded-md" />
-                            <div class="sn-title mt-2">
-                                <a href="" class="text-blue-600 hover:underline">Interdum et fames ac ante</a>
+    <div class="single-Blog">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-2/3 mb-8">
+                    <div class="sn-container flex flex-col gap-2">
+                        <div class="flex items-center gap-3">
+                            <img src="#" alt="Profile Picture" class="w-10 h-10 rounded-full fill-black bg-black">
+                            <p class="font-semibold">{{ $blog->user->username }}</p>
+                        </div>
+                        <div class="my-5">
+                            <h2 class="sw-title text-xl font-bold">Blog Category</h2>
+                            <div class="category">
+                                <ul class="space-y-2">
+                                    <li class="flex justify-between">
+                                        <a href="#" class="hover:text-blue-600">{{ $blog->category->name }}</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                        <h1 class="text-3xl font-bold mb-4">{{ $blog->title }}</h1>
                         <div class="sn-img">
-                            <img src="img/news-350x223-2.jpg" class="w-full rounded-md" />
-                            <div class="sn-title mt-2">
-                                <a href="" class="text-blue-600 hover:underline">Interdum et fames ac ante</a>
-                            </div>
+                            <img src="{{ asset('storage/' . $blog->thumbnail) }}"
+                                class="w-full max-h-[500px] rounded-md shadow-md" />
                         </div>
-                        <div class="sn-img">
-                            <img src="img/news-350x223-3.jpg" class="w-full rounded-md" />
-                            <div class="sn-title mt-2">
-                                <a href="" class="text-blue-600 hover:underline">Interdum et fames ac ante</a>
-                            </div>
-                        </div>
-                        <div class="sn-img">
-                            <img src="img/news-350x223-4.jpg" class="w-full rounded-md" />
-                            <div class="sn-title mt-2">
-                                <a href="" class="text-blue-600 hover:underline">Interdum et fames ac ante</a>
-                            </div>
+                        <div class="sn-content py-4">
+                            <p class="mb-4">
+                                {{ $blog->content }}
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="w-full lg:w-1/3 mt-8 lg:mt-0 lg:pl-8">
-                <div class="sidebar">
-                    <div class="sidebar-widget bg-white p-4 shadow-md">
-                        <h2 class="sw-title text-xl font-bold mb-4">In This Category</h2>
-                        <div class="news-list space-y-4">
-                            <div class="flex">
-                                <img src="img/news-350x223-1.jpg" class="w-24 h-16 object-cover rounded-md" />
-                                <div class="ml-4 flex-1">
-                                    <a href="" class="text-blue-600 hover:underline">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <img src="img/news-350x223-2.jpg" class="w-24 h-16 object-cover rounded-md" />
-                                <div class="ml-4 flex-1">
-                                    <a href="" class="text-blue-600 hover:underline">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <img src="img/news-350x223-3.jpg" class="w-24 h-16 object-cover rounded-md" />
-                                <div class="ml-4 flex-1">
-                                    <a href="" class="text-blue-600 hover:underline">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <img src="img/news-350x223-4.jpg" class="w-24 h-16 object-cover rounded-md" />
-                                <div class="ml-4 flex-1">
-                                    <a href="" class="text-blue-600 hover:underline">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <img src="img/news-350x223-5.jpg" class="w-24 h-16 object-cover rounded-md" />
-                                <div class="ml-4 flex-1">
-                                    <a href="" class="text-blue-600 hover:underline">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
+                <div class="w-full lg:w-1/3">
+                    <div class="sidebar space-y-8 ms-5">
+                        <div class="sidebar-widget">
+                            <h2 class="sw-title text-xl font-bold mb-4">Related Blog</h2>
+                            <div class="Blog-list space-y-4 my-3">
+                                @foreach ($blogs as $blog)
+                                    <div class="flex items-center">
+                                        <img src="{{ asset('storage/' . $blog->thumbnail) }}"
+                                            class="w-20 h-16 rounded-md mr-4" />
+                                        <div class="nl-title">
+                                            <a href="{{ route('blog.show', $blog->slug) }}"
+                                                class="text-blue-600">{{ $blog->title }}</a>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
+                        <div class="sidebar-widget">
+                            <h2 class="sw-title text-xl font-bold mb-4">Comments</h2>
+                            <div class="comments-section space-y-4">
+                                @foreach ($blog->comments as $comment)
+                                    <div class="comment-item flex flex-col gap-3 bg-slate-500 p-4 rounded-lg">
+                                        <div class="flex items-center gap-5">
+                                            <img src="#" alt="Profile Picture"
+                                                class="w-10 h-10 rounded-full fill-black bg-black">
+                                            <p class="font-semibold">{{ $comment->user->username }}</p>
+                                        </div>
+                                        <p>{{ $comment->content }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
+                            @auth
+                                <form action="{{ route('comment.store') }}" method="POST" class="mt-4">
+                                    @csrf
+                                    <textarea name="content" class="w-full border-2 hover:border-[#FFD600] rounded-md p-2 bg-transparent" rows="4"
+                                        placeholder="Leave a comment..."></textarea>
+                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                    <input type="hidden" name="blog_id" value="{{ $blog->id }}">
+                                    <button type="submit"
+                                        class="mt-2 bg-blue-600 text-white py-2 px-4 rounded-md">Submit</button>
+                                </form>
+                            @endauth
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
 </x-app-layout>

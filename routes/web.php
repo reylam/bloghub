@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Bookmark;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('profile/addBlog', [BlogController::class, 'create'])->name('blog.create');
     Route::post('profile/addBlog', [BlogController::class, 'store'])->name('blog.store');
-    Route::post('profile/showBlog', [BlogController::class, 'show'])->name('blog.show');
+    Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
     Route::get('/profile/bookmark', [BookmarkController::class, 'index'])->name('profile.bookmark');
+    Route::post('/profile/bookmark', [BookmarkController::class, 'store'])->name('bookmark.store');
+    Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
 
 });
 
