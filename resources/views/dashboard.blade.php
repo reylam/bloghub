@@ -124,6 +124,9 @@
                             <p>100 Views</p>
                         </div>
                     </div>
+                    <button
+                        class="mt-3 transition-all ease-in duration-200 border-solid border-2 border-gray-600 p-3 rounded-3xl hover:bg-blue-600 hover:font-semibold hover:border-blue-600">Read
+                        More</button>
                 </div>
             </div>
 
@@ -144,8 +147,8 @@
                             </svg>
                         </button>
                         <div class="flex gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-calendar-event" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
                                 <path
                                     d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
                                 <path
@@ -164,6 +167,9 @@
                             <p>100 Views</p>
                         </div>
                     </div>
+                    <button
+                        class="mt-3 transition-all ease-in duration-200 border-solid border-2 border-gray-600 p-3 rounded-3xl hover:bg-blue-600 hover:font-semibold hover:border-blue-600">Read
+                        More</button>
                 </div>
             </div>
 
@@ -204,6 +210,9 @@
                             <p>100 Views</p>
                         </div>
                     </div>
+                    <button
+                        class="mt-3 transition-all ease-in duration-200 border-solid border-2 border-gray-600 p-3 rounded-3xl hover:bg-blue-600 hover:font-semibold hover:border-blue-600">Read
+                        More</button>
                 </div>
             </div>
             <div class="w-[435px] object-cover flex flex-col gap-5">
@@ -243,6 +252,9 @@
                             <p>100 Views</p>
                         </div>
                     </div>
+                    <button
+                        class="mt-3 transition-all ease-in duration-200 border-solid border-2 border-gray-600 p-3 rounded-3xl hover:bg-blue-600 hover:font-semibold hover:border-blue-600">Read
+                        More</button>
                 </div>
             </div>
         </div>
