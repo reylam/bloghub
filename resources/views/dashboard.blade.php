@@ -100,13 +100,29 @@
                         <p class="font-medium text-gray-500 flex-grow">{{ Str::limit($blog->content, 200, '...') }}</p>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                         <div class="flex gap-5 align-middle justify-between text-gray-400">
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
-                                    <path
-                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
-                                </svg>
-                            </button>
+                            @foreach ($blog->bookmarks as $bookmark)
+                                @if ($bookmark->user_id !== Auth::user()->id)
+                                    <form action="{{ route('blog.bookmark') }}" method="POST">
+                                        @csrf
+                                        <input type="text" value="{{ Auth::user()->id }}" name="user_id"
+                                            class="hidden">
+                                        <input type="text" value="{{ $blog->id }}" name="blog_id" class="hidden">
+                                        <button type="submit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                @else
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                                    </svg>
+                                @endif
+                            @endforeach
                             <div class="flex gap-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">

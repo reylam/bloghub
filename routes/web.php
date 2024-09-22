@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::get('profile/blog', [ProfileController::class, 'blog'])->name('profile.blog');
     Route::get('profile/addBlog', [BlogController::class, 'create'])->name('blog.create');
     Route::post('profile/addBlog', [BlogController::class, 'store'])->name('blog.store');
+    Route::post('profile/bookmark', [BookmarkController::class, 'store'])->name('blog.bookmark');
 });
 Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
