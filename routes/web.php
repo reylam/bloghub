@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,6 +10,7 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', [BlogController::class, 'index'])->name('dashboard');
+Route::get('/categories', [CategoryController::class, 'index'])->name('dashboard.categories');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

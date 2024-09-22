@@ -26,16 +26,25 @@
                     class="w-full h-full ps-4 text-[16px] font-['Poppins'] text-white border-none focus:outline-none focus:ring-0 rounded-[26px] bg-[#555555]"
                     type="text" placeholder="Search Here" aria-label="Search">
             </div>
-            <div class="flex space-x-4 ms-[15px]">
-                <button
-                    class="ms-[80px] px-[50px] h-[45px] text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">All</button>
-                <button
-                    class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">Technology</button>
-                <button
-                    class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">Study</button>
-                <button
-                    class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">Science</button>
+
+            <!-- Container Kategori yang Bisa Di-scroll -->
+            <div id="category-container"
+                class="flex space-x-4 ms-[15px] overflow-hidden max-w-[810px] transition-all duration-300">
+                <div class="flex space-x-4 w-max">
+                    <button
+                        class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">All</button>
+                    @foreach ($categories as $category)
+                        <button
+                            class="px-[50px] py-2 text-white bg-none hover:bg-[#FFD600] hover:text-[#0E0E0E] hover:font-bold rounded-full text-[16px] font-['Poppins'] transition-all">{{ $category->name }}</button>
+                    @endforeach
+                </div>
             </div>
+
+            <!-- Tombol Kanan untuk Navigasi -->
+            <button id="next-btn"
+                class="ms-[15px] text-white bg-gray-400 hover:bg-gray-600 rounded-full px-3 py-2 transition-all">
+                →
+            </button>
         </div>
     </header>
 
@@ -81,37 +90,163 @@
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
                     class="w-full h-[500px] rounded-2xl">
-                    <div class="flex flex-col gap-3 px-4 ">
-                        <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
-                        <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                <div class="flex flex-col gap-4 px-4 ">
+                    <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
+                    <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                    <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                    <div class="flex gap-5 align-middle text-gray-400">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                            </svg>
+                        </button>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                            </svg>
+                            <p>22 Oktober 2024</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                            </svg>
+                            <p>100 Views</p>
+                        </div>
                     </div>
+                </div>
             </div>
 
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
                     class="w-full h-[500px] rounded-2xl">
-                    <div class="flex flex-col gap-3 px-4 ">
-                        <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
-                        <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                <div class="flex flex-col gap-4 px-4 ">
+                    <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
+                    <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                    <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                    <div class="flex gap-5 align-middle text-gray-400">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                            </svg>
+                        </button>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                            </svg>
+                            <p>22 Oktober 2024</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                            </svg>
+                            <p>100 Views</p>
+                        </div>
                     </div>
+                </div>
             </div>
 
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
                     class="w-full h-[500px] rounded-2xl">
-                    <div class="flex flex-col gap-3 px-4 ">
-                        <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
-                        <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                <div class="flex flex-col gap-4 px-4 ">
+                    <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
+                    <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                    <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                    <div class="flex gap-5 align-middle text-gray-400">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                            </svg>
+                        </button>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                            </svg>
+                            <p>22 Oktober 2024</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                            </svg>
+                            <p>100 Views</p>
+                        </div>
                     </div>
+                </div>
             </div>
             <div class="w-[435px] object-cover flex flex-col gap-5">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s"
                     class="w-full h-[500px] rounded-2xl">
-                    <div class="flex flex-col gap-3 px-4 ">
-                        <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
-                        <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                <div class="flex flex-col gap-4 px-4 ">
+                    <p class="font-extrabold text-2xl">Soon Robots Will Replace humans</p>
+                    <p class="font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        ad quibusdam possimus, a quod quidem accusantium quasi repudiandae nisi asperiores?</p>
+                    <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                    <div class="flex gap-5 align-middle text-gray-400">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                            </svg>
+                        </button>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                            </svg>
+                            <p>22 Oktober 2024</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                            </svg>
+                            <p>100 Views</p>
+                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </main>
+
+
 </x-app-layout>
