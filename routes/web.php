@@ -18,7 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/profile/addBlog', function () {
         return view('blog.addBlog');
-    })->name('blog.addBlog');
+    })->name('blog.create');
+    Route::post('profile/addBlog', [ProfileController::class, 'store'])->name('blog.store');
     
 });
 

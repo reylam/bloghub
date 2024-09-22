@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class BlogController extends Controller
 {
@@ -17,8 +18,8 @@ class BlogController extends Controller
     }
 
 
-    public function store(){
-
+    public function store(Request $request){
+        
     }
     
 }

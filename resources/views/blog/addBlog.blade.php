@@ -4,7 +4,7 @@
             <p class="font-bold text-2xl">
                 Add Blog New
             </p>
-            <form action="{{ route('blog.addBlog') }}" method="POST">
+            <form action="{{ route('blog.store') }}" method="POST">
                 @csrf
                 <div class="flex flex-col gap-4">
                     <div>
