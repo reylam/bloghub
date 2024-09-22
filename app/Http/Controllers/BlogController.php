@@ -25,4 +25,9 @@ class BlogController extends Controller
 
 
     public function store(Request $request) {}
+
+
+    public function show(){
+        return view('blog.readBlog');
+    }
 }

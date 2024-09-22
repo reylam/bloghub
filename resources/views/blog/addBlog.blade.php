@@ -8,9 +8,7 @@
                 @csrf
                 <div class="flex flex-col gap-6">
                     <div>
-                        <label class="font-semibold text-lg" for="title">
-                            Title
-                        </label>
+                        <label class="font-semibold text-lg" for="title">Title</label>
                         <input type="text" id="title" name="title" placeholder="Enter your blog title..."
                             class="border-2 border-[#ffd50070] rounded-md w-full py-2 px-3 bg-[#2d3748] text-white placeholder-gray-400 focus:ring-[#FFD600] focus:border-[#FFD600]"
                             required>
@@ -22,32 +20,28 @@
                             placeholder="Write your blog content here..." required></textarea>
                     </div>
                     <div>
-<<<<<<< HEAD
-                        <label for="category">Category:</label>
+                        <label for="category" class="font-semibold text-lg">Category:</label>
                         <select name="category_id" id="category"
-                            class="border-2 border-[#ffd50070] rounded-md w-full py-2 px-3 bg-yellow-100 text-black"
-                            required>
-                            <option value="" disabled selected>Select a category</option>
+                            class="border-2 border-[#ffd50070] rounded-md w-full py-2 px-3 bg-[#2d3748] text-white placeholder-gray-400 focus:ring-[#FFD600] focus:border-[#FFD600]">
+                            <option value="" disabled selected class="bg-gray-700 text-gray-400">Select a category</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" class="bg-gray-800 text-white">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
-                        <label for="image">Upload Image:</label>
-                        <input type="file" id="image" name="image" class="w-full">
-=======
                         <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-[#ffd50070] border-dashed rounded-lg cursor-pointer bg-[#2d3748] hover:bg-[#3a434c]">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                 <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
                                 </svg>
                                 <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                <p class="text-xs text-gray-500">SVG, PNG, JPG or JPEG</p>
+                                <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                             </div>
-                            <input id="dropzone-file" type="file" name="image" class="hidden" />
+                            <input id="dropzone-file" type="file" name="image" class="hidden" onchange="displayFile(this)" />
+                            <img id="image-preview" class="mt-2 hidden w-24 h-24 object-cover border-2 border-[#ffd50070] rounded-md" />
                         </label>
->>>>>>> 70a12a5 (add blog perubahan)
+                        <p id="file-name" class="mt-2 text-sm text-gray-400">No file chosen</p>
                     </div>
                     <div>
                         <button type="submit"
@@ -59,4 +53,24 @@
             </form>
         </div>
     </div>
+    <script>
+            function displayFile(input) {
+            const fileName = input.files[0] ? input.files[0].name : 'No file chosen';
+            document.getElementById('file-name').textContent = fileName;
+
+            const file = input.files[0];
+            const preview = document.getElementById('image-preview');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden'); // Show the image preview
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.classList.add('hidden'); // Hide the image preview if no file
+            }
+        }
+    </script>
 </x-app-layout>
