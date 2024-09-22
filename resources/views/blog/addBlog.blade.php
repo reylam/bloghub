@@ -61,6 +61,7 @@
                                 class="mt-2 hidden w-full h-full object-cover border-2 border-[#ffd50070] rounded-md" />
                         </label>
                         <p id="file-name" class="mt-2 text-sm text-gray-400">No file chosen</p>
+                        <input type="text" value="{{ Auth::user()->id }}" name="user_id" class="hidden">
                     </div>
                     <div>
                         <button type="submit"

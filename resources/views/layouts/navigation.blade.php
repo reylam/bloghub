@@ -11,8 +11,8 @@
             <!-- Nav -->
             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
                 <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
-                    <a href="#blog" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Blog</a>
+                    <a href="{{route('dashboard')}}" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Home</a>
+                    <a href="{{route('profile.blog')}}" class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Blog</a>
                     @auth
                         <a href="#bookmark"
                             class="font-['Poppins'] text-white px-[40px] text-[14px] py-2 rounded">Bookmark</a>
