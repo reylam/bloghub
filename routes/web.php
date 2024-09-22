@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/addBlog', function () {
         return view('blog.addBlog');
     })->name('blog.addBlog');
+    
 });
 
 require __DIR__ . '/auth.php';
