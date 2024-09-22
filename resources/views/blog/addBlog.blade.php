@@ -1,10 +1,26 @@
 <x-app-layout>
     <div class="min-w-full flex justify-center bg-[#111827] text-white py-10">
         <div class="flex w-[1380px] py-6 flex-col gap-8 bg-[#1f2937] rounded-lg p-8 shadow-lg">
+<<<<<<< HEAD
             <p class="font-bold text-3xl text-center text-[#FFD600]">
                 Add a New Blog
             </p>
             <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+=======
+            @if ($errors->any())
+            <div class="bg-red-500 text-white p-4 rounded-md">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+            <p class="font-bold text-3xl text-center text-[#FFD600]">
+                Add a New Blog
+            </p>
+            <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data"> 
+>>>>>>> 76034da (New)
                 @csrf
                 <div class="flex flex-col gap-6">
                     <div>
@@ -35,6 +51,7 @@
                     </div>
                     <div>
                         <label for="image">Upload Image:</label>
+<<<<<<< HEAD
                         <input type="file" id="image" name="image" class="w-full">
 =======
                         <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-[#ffd50070] border-dashed rounded-lg cursor-pointer bg-[#2d3748] hover:bg-[#3a434c]">
@@ -48,6 +65,9 @@
                             <input id="dropzone-file" type="file" name="image" class="hidden" />
                         </label>
 >>>>>>> 70a12a5 (add blog perubahan)
+=======
+                        <input type="file" id="image" name="thumbnail" class="w-full">
+>>>>>>> 76034da (New)
                     </div>
                     <div>
                         <button type="submit"
