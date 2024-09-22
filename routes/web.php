@@ -22,15 +22,11 @@ Route::middleware('auth')->group(function () {
     Route::get('profile/blog', [ProfileController::class, 'blog'])->name('profile.blog');
     Route::get('profile/addBlog', [BlogController::class, 'create'])->name('blog.create');
     Route::post('profile/addBlog', [BlogController::class, 'store'])->name('blog.store');
-<<<<<<< HEAD
     Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
     Route::get('/profile/bookmark', [BookmarkController::class, 'index'])->name('profile.bookmark');
     Route::post('/profile/bookmark', [BookmarkController::class, 'store'])->name('bookmark.store');
     Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
-
-=======
     Route::post('profile/bookmark', [BookmarkController::class, 'store'])->name('blog.bookmark');
->>>>>>> origin/main
 });
 Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
